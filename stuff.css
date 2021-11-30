@@ -1,0 +1,50 @@
+  .box{
+    background-color:#333;
+    padding:10px;
+    border-radius:10px;
+    color:#fff;
+    width: 200px;
+    height:200px;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-family:sans-serif;
+  }
+  .container1{
+    
+    margin: 20px 20px;
+    width:400px;
+    height:400px;
+    display:grid;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    
+  
+  }
+.sizer {   
+    width:200px;
+    height:200px;
+    
+    border: 0px solid;
+    justify-content:center;
+    border-radius:10px;
+    padding:10px;
+    
+    
+    width: 200px;
+    height:200px;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-family:sans-serif;
+    
+}
+button:active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 25px #808080;
+       -moz-box-shadow: inset 0px 0px 25px #808080;
+            box-shadow: inset 0px 0px 25px #808080;
+     outline: none;
+  }
