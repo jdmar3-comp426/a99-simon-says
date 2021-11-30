@@ -2,7 +2,7 @@ window.addEventListener("load", function(){
     function addAccount() {
         const sendRequest = new XMLHttpRequest()
          // Bind the FormData object and the form element
-        const FD = new FormData( form );
+        const FD = new URLSearchParams(new FormData( form ));
 
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
     // Access the form element...
     const form = document.getElementById( "form" );
 
-    // ...and take over its submit event.
+    // Submit account to database after clicking submit
     form.addEventListener( "submit", function ( event ) {
         event.preventDefault();
 
