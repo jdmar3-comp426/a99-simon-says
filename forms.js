@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
 
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
-            alert( event.target.responseText );
+            alert( "Oh ya!" );
         } );
 
         // Define what happens in case of error
