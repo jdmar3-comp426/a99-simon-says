@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-    <head>
-        <title>Title of the document</title>
-        <link rel="stylesheet" href="styles.css">
-        <script>src="forms.js"</script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="stuff.css">
+    <script>src = "forms.js"</script>
+    <title>Simon Says</title>
+</head>
+
 <body>
-    <h1>My home page</h1>
-    <p class="dotted">Hi guys</p>
-    <p><a href="page1.html">Click for Page 1</a></p>
-    <p><a href="page2.html">Click for Page 2</a></p>
-    <p><a href="page3.html">Click for Page 3</a></p>
-    <div class="square"></div>
-    <form id="form">
-        <label for="name">Name:</label>
-        <input id="name" name="name" value="">
-        <label for="password">Password:</label>
-        <input id="password" name="password" value="">
-        <input type="submit" value="Submit!">
-    </form>
+    <section class="hero is-light is-fullheight">
+        <div class="container">
+            <div class="content has-text-centered">
+                <br>
+                <h1 class="title has-text-black has-text-weight-bold">Simon Game</h1>
+
+                <form id="form">
+                    <label for="name">Name:</label>
+                    <input id="name" name="name" value="">
+                    <label for="password">Password:</label>
+                    <input id="password" name="password" value="">
+                    <input type="submit" value="Submit!">
+                </form>
+
+                <br>
+                <h5 class="subtitle">Player: Maya Agnihotri/Score:100</h5>
+
+                <div class="container1">
+                    <button class="sizer has-background-danger"></button>
+                    <button class="sizer has-background-warning"></button>
+                    <button class="sizer has-background-success"></button>
+                    <button class="sizer has-background-info"></button>
+
+
+                </div>
+
+            </div>
+
+    </section>
+
 </body>
 
 </html>
