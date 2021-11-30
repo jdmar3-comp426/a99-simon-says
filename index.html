@@ -13,12 +13,18 @@
     <p><a href="page2.html">Click for Page 2</a></p>
     <p><a href="page3.html">Click for Page 3</a></p>
     <div class="square"></div>
-    <form id="form">
+    <script>
+        function fn1() {
+            var str = document.getElementById("text1").value;
+            alert("value inside is bruh" + str);
+        }
+    </script>
+    <form id="http://localhost:3000/">
         <label for="name">Name:</label>
         <input id="name" name="name" value="">
         <label for="password">Password:</label>
         <input id="password" name="password" value="">
-        <input type="submit" value="Submit!">
+        <button onclick="fn1()" id= "btn1" >Submit</button>
     </form>
 </body>
 
