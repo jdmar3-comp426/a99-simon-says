@@ -9,7 +9,7 @@ function activateTile(color) {
     const sqColor = document.querySelector(`[data-type='${color}']`);  
     sqColor.classList.add('activated');
     setTimeout(() => {
-        tile.classList.remove('activated');
+        sqColor.classList.remove('activated');
       }, 300);
 }
 
