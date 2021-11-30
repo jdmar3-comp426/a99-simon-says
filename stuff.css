@@ -58,6 +58,10 @@ button:active {
     display: none !important;
   }
 
+  .activated {
+    background-color: #fff;
+  }
+  
   green:active,
 .green.activated {
   background-color:rgb(131, 248, 121);
