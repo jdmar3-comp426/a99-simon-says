@@ -2,11 +2,11 @@ window.addEventListener("load", function(){
     function addAccount() {
         const sendRequest = new XMLHttpRequest()
          // Bind the FormData object and the form element
-        const FD = new URLSearchParams(new FormData( form ));
+        const FD = new FormData( form );
 
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
-            alert( 'Oh ya!' );
+            alert( event.target.responseText );
         } );
 
         // Define what happens in case of error
@@ -15,14 +15,14 @@ window.addEventListener("load", function(){
         } );
 
         // Set up our request
-        XHR.open( "POST", "http://localhost:3000/app/new/user" );
+        XHR.open( "POST", "http://localhost:3000/app/new" );
 
         // The data sent is what the user provided in the form
         XHR.send( FD );
     }
 
     // Access the form element...
-    const form = document.getElementById( "form" );
+    const form = document.getElementById( "forms" );
 
     // Submit account to database after clicking submit
     form.addEventListener( "submit", function ( event ) {
