@@ -57,3 +57,21 @@ button:active {
   .hidden {
     display: none !important;
   }
+
+  green:active,
+.green.activated {
+  background-color:rgb(131, 248, 121);
+}
+
+blue:active,
+.blue.activated {
+  background-color:rgb(109, 201, 255);
+}
+red:active,
+.red.activated {
+  background-color:rgb(248, 121, 121);
+}
+yellow:active,
+.yellow.activated {
+  background-color:rgb(240, 248, 121);
+}
