@@ -9,7 +9,7 @@
     "server": "node server.js",
     "start": "concurrently --kill-others 'npm run client' 'npm run server'"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:3000",
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
