@@ -109,5 +109,8 @@ yellow:active,
   height:320px;
   align-items:center;
   justify-content:center;
+}
 
+.unclickable {
+  pointer-events: none;
 }
