@@ -48,3 +48,12 @@ button:active {
             box-shadow: inset 0px 0px 25px #808080;
      outline: none;
   }
+
+  .info {
+    font-size: 35px;
+  }
+
+ 
+  .hidden {
+    display: none !important;
+  }

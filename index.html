@@ -6,41 +6,46 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
     <link rel="stylesheet" href="stuff.css">
-    <script>src = "forms.js"</script>
+    <script src="forms.js"></script> 
     <title>Simon Says</title>
 </head>
 
 <body>
-
     <section class="hero is-light is-fullheight">
         <div class="container">
             <div class="content has-text-centered">
                 <br>
-                <h1 class="title has-text-black has-text-weight-bold">Simon Game</h1>
+                <h1 class="title is-size-1 has-text-black has-text-weight-bold">Simon Game</h1>
 
                 <form><br>
-                    Username: <input type="text" id="Username"/><br><br>
-                    Password: <input type="text" id="Password"/><br><br>
-                    <input type="submit" value="Submit" onclick="addAccount()"/><br>
+                    Username: <input type="text" id="Username" /><br><br>
+                    Password: <input type="text" id="Password" /><br><br>
+                    <input type="submit" value="Submit" onclick="addAccount()" /><br>
                 </form>
 
                 <br>
-                <h5 class="subtitle">Player: Maya Agnihotri/Score:100</h5>
+                <h5 class="subtitle">Player: "player name"/Score:"score"</h5>
 
                 <div class="container1">
                     <button class="sizer has-background-danger"></button>
                     <button class="sizer has-background-warning"></button>
                     <button class="sizer has-background-success"></button>
                     <button class="sizer has-background-info"></button>
-
-
                 </div>
+                <br>
+
+                <footer class="info-section">
+                    <button class="js-start button is-large is-link is-outlined">Start</button>
+                    <span class="info js-info hidden has-text-centered has-text-weight-bold"></span>
+                </footer>
 
             </div>
 
+
+            </main>
     </section>
 
-
+    <script src="script.js"></script> 
 </body>
 
 </html>
