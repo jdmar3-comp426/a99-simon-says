@@ -20,7 +20,7 @@ app.get("/app/", (req, res, next) => {
     res.json({"message":"Your API works! (200)"});
 	res.status(200);
 });
-kunj pate
+
 // Define other CRUD API endpoints using express.js and better-sqlite3
 // CREATE a new user (HTTP method POST) at endpoint /app/new/
 app.post("/app/new", (req, res) => {	
