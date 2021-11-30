@@ -96,3 +96,18 @@ yellow:active,
   background-color:rgb(240, 248, 121);
   box-shadow: 0px 0px 20px 20px rgb(240, 248, 121);
 }
+
+.custom {
+  
+  border: 0px solid;
+  justify-content:center;
+  border-radius:10px;
+  padding:30px;
+  
+  
+  width: 450px;
+  height:320px;
+  align-items:center;
+  justify-content:center;
+
+}

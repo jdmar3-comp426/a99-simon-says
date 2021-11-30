@@ -14,6 +14,9 @@ function activateTile(color) {
 }
 
 function playRound(nextSequence) {
+    if(gameLevel > 1) {
+        info.classList.add('hidden');
+    }
     nextSequence.forEach((color, index) => {
         setTimeout(() => {
             activateTile(color);
