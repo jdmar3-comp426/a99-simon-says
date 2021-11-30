@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-    function sendData() {
+    function addAccount() {
         const sendRequest = new XMLHttpRequest()
          // Bind the FormData object and the form element
         const FD = new FormData( form );
@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
         } );
 
         // Set up our request
-        XHR.open( "POST", "http://localhost:3000" );
+        XHR.open( "POST", "http://localhost:3000/app/new/user" );
 
         // The data sent is what the user provided in the form
         XHR.send( FD );
@@ -28,6 +28,6 @@ window.addEventListener("load", function(){
     form.addEventListener( "submit", function ( event ) {
         event.preventDefault();
 
-        sendData();
+        addAccount();
     } )
 })
