@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
 
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
-            alert( "Oh ya!" );
+            alert( 'Oh ya!' );
         } );
 
         // Define what happens in case of error
@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
         } );
 
         // Set up our request
-        XHR.open( "POST", "http://localhost:5000/app/new/user" );
+        XHR.open( "POST", "http://localhost:3000" );
 
         // The data sent is what the user provided in the form
         XHR.send( FD );
