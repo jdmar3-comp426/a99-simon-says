@@ -1,12 +1,17 @@
 window.addEventListener("load", function(){
+    
+    
+    //start add user
     function addAccount() {
-        const sendRequest = new XMLHttpRequest()
+        const XHR = new XMLHttpRequest()
          // Bind the FormData object and the form element
-        const FD = new FormData( form );
+        //const FD = new FormData( form );
+        const FD = new URLSearchParams(new FormData( form ));
+
 
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
-            alert( event.target.responseText );
+            alert( 'Oh ya!' );
         } );
 
         // Define what happens in case of error
@@ -15,7 +20,8 @@ window.addEventListener("load", function(){
         } );
 
         // Set up our request
-        XHR.open( "POST", "http://localhost:3000/app/new" );
+        console.log("dpg");
+        XHR.open( "POST", "http://localhost:5000/app/new", true );
 
         // The data sent is what the user provided in the form
         XHR.send( FD );
@@ -30,4 +36,8 @@ window.addEventListener("load", function(){
 
         addAccount();
     } )
+    //end add user
+
+    //
+    
 })

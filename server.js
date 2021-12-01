@@ -5,9 +5,11 @@ var app = express()
 var db = require("./database.js");
 // Require md5 MODULE
 var md5 = require("md5");
+var cors = require("cors");
 // Make Express use its own built-in body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // Set server port
 var HTTP_PORT = 5000;
@@ -23,9 +25,10 @@ app.get("/app/", (req, res, next) => {
 
 // Define other CRUD API endpoints using express.js and better-sqlite3
 // CREATE a new user (HTTP method POST) at endpoint /app/new/
-app.post("/app/new", (req, res) => {	
+app.post("/app/new", (req, res) => {
+	console.log(req.user)	
 	const stmt = db.prepare("INSERT INTO userinfo (user, pass) VALUES (?, ?)");
-	const info = stmt.run(req.body.user, md5(req.body.pass));
+	const info = stmt.run(req.user, md5(req.pass));
 	res.status(201).send({"message": info.changes + " record created: ID " +info.lastInsertRowid + " (201)"});
 });
 
