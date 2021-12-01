@@ -131,3 +131,23 @@ yellow:hover,
 .unclickable {
   pointer-events: none;
 }
+
+div.red:active {
+  background-color:rgb(248, 121, 121);
+    box-shadow: 0px 0px 20px 20px rgb(248, 121, 121);
+}
+
+div.blue:active {
+  background-color:rgb(109, 201, 255);
+  box-shadow: 0px 0px 20px 20px rgb(109, 201, 255);
+}
+
+div.green:active {
+  background-color:rgb(131, 248, 121);
+    box-shadow: 0px 0px 20px 20px rgb(131, 248, 121);
+}
+
+div.yellow:active {
+  background-color:rgb(240, 248, 121);
+  box-shadow: 0px 0px 20px 20px rgb(240, 248, 121);
+}
