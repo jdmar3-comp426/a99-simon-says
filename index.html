@@ -27,27 +27,39 @@
                     <input class="button is-link is-outlined" type="submit" value="Login/Sign Up">
                 </form>
 
+                <section class = "tile-container js-container unclickable">
                 <div class="container1 js-container">
-                    <button data-type="red" class=" red sizer "></button>
-                    <button data-type="yellow" class=" yellow sizer "></button>
-                    <button data-type="green" class="green sizer "></button>
-                    <button data-type="blue" class="blue sizer "></button>
+                    <div data-type="red" class=" red sizer "></div>
+                    <div data-type="yellow" class=" yellow sizer "></div>
+                    <div data-type="green" class="green sizer "></div>
+                    <div data-type="blue" class="blue sizer " ></div>
                 </div>
-                <br>
-                <footer>
-                    <button class="js-start button is-large is-link is-outlined">Start</button>
-                    <span class="info js-info hidden has-text-centered has-text-weight-bold"></span>
-                </footer>
+            </section >
+            <br>
+            <footer>
+                <button class="js-start button is-large is-link is-outlined">Start</button>
+              <div>
+                <span class="info js-info hidden has-text-centered has-text-weight-bold"></span>
+              </div>
+            </footer>
+    
 
             </div>
             <br>
+
+            <div  class="container2">
+                <span class="highscore js-highscore hidden  has-text-centered has-text-weight-bold">NEW HIGH SCORE!</span>
+            </div>
 
             <div class="custom container has-background-dark">
                 <div class="content">
                     <h1 class="has-text-centered has-text-white">Player Stats</h1>
                     <h1 class="has-text-white">Name: </h1>
-                    <h1 classc="js-heading has-text-white">Level: </h1>
-                    <h1 class="has-text-white">High Score: </h1>
+                    <h1 class="has-text-white">Level: 
+                        <span id="score"> </span>
+                    </h1>
+                    <h1 class="has-text-white">Your high Score: 
+                    </h1>
                 </div>
             </div>
             <hr>
