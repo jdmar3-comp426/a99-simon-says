@@ -25,9 +25,11 @@ window.addEventListener("load", function(){
         XHR.send( FD );
     }
 
-    function updateScore(score) {
+    export function updateScore(score) {
         const XHR = new XMLHttpRequest()
          // Bind the FormData object and the form element
+        const FD = new URLSearchParams(new FormData( score ));
+
     
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
@@ -40,10 +42,10 @@ window.addEventListener("load", function(){
         } );
 
         // Set up our request
-        XHR.open( "POST", "http://localhost:5500/app/new", true );
+        XHR.open( "PATCH", "http://localhost:5500/app/update/user/:id", true );
 
         // The data sent is what the user provided in the form
-        XHR.send( score );
+        XHR.send( FD );
     }
 
     // Access the form element...
