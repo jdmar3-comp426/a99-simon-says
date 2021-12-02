@@ -126,7 +126,7 @@ function resetGame(text) {
   //      New div that says new high score
   // set high score send back to form
   if (gameLevel > highScore) {
-    updateScore(gameLevel);
+
   }
 }
 

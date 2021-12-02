@@ -25,12 +25,12 @@ window.addEventListener("load", function(){
         XHR.send( FD );
     }
 
-    export function updateScore(score) {
+    /*export function updateScore() {
         const XHR = new XMLHttpRequest()
          // Bind the FormData object and the form element
-        const FD = new URLSearchParams(new FormData( score ));
+        
+        const FD = new URLSearchParams(new FormData( form ));
 
-    
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
             alert( 'Oh ya!' );
@@ -47,6 +47,8 @@ window.addEventListener("load", function(){
         // The data sent is what the user provided in the form
         XHR.send( FD );
     }
+    */
+
 
     // Access the form element...
     const form = document.getElementById( "forms" );
