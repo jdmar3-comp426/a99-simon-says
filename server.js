@@ -28,7 +28,7 @@ app.get("/app/", (req, res, next) => {
 app.post("/app/new", (req, res) => {
 	console.log(req.body.user)	
 	const stmt = db.prepare("INSERT INTO userinfo (user, pass) VALUES (?, ?)");
-	const info = stmt.run(req.user, md5(req.body.pass));
+	const info = stmt.run(req.body.user, md5(req.body.pass));
 	res.status(201).send({"message": info.changes + " record created: ID " +info.lastInsertRowid + " (201)"});
 });
 
