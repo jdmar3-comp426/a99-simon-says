@@ -5,7 +5,7 @@ window.addEventListener("load", function(){
         const XHR = new XMLHttpRequest()
          // Bind the FormData object and the form element
         //const FD = new FormData( form );
-        const FD = new FormData( form );
+        const FD = new URLSearchParams(new FormData( form ));
 
 
         // Define what happens on successful data submission
