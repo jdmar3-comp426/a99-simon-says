@@ -1,6 +1,5 @@
 window.addEventListener("load", function(){
     
-    
     //start add user
     function addAccount() {
         const XHR = new XMLHttpRequest()
@@ -20,8 +19,7 @@ window.addEventListener("load", function(){
         } );
 
         // Set up our request
-        console.log("dpg");
-        XHR.open( "POST", "http://localhost:5000/app/new", true );
+        XHR.open( "POST", "http://localhost:5500/app/new", true );
 
         // The data sent is what the user provided in the form
         XHR.send( FD );
