@@ -26,7 +26,7 @@ window.addEventListener("load", function(){
         XHR.send( FD );
     }
 
-    function updateScore() {
+    /*function getScore() {
         const XHR = new XMLHttpRequest()
          // Bind the FormData object and the form element
         //const FD = new FormData( form );
@@ -49,6 +49,7 @@ window.addEventListener("load", function(){
         // The data sent is what the user provided in the form
         XHR.send( FD );
     }
+    */
 
     // Access the form element...
     const form = document.getElementById( "forms" );
@@ -59,7 +60,7 @@ window.addEventListener("load", function(){
 
         addAccount();
 
-        updateScore()
+        //getScore();
     } )
     //end add user
 
