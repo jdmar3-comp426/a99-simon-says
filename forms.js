@@ -26,7 +26,7 @@ window.addEventListener("load", function(){
 
     function getScore() {
         let request = new XMLHttpRequest();
-        console.log(name)
+
         request.open('GET', "http://localhost:5500/app/user/:" + name);
         request.responseType = 'text';
         
