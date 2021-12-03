@@ -26,31 +26,6 @@ window.addEventListener("load", function(){
         XHR.send( FD );
     }
 
-    /*function getScore() {
-        const XHR = new XMLHttpRequest()
-         // Bind the FormData object and the form element
-        //const FD = new FormData( form );
-        const FD = new URLSearchParams(new FormData( form ));
-
-
-        // Define what happens on successful data submission
-        XHR.addEventListener( "load", function(event) {
-            alert( 'High score displayed.' );
-        } );
-
-        // Define what happens in case of error
-        XHR.addEventListener( "error", function( event ) {
-            alert( 'Oops! Something went wrong.' );
-        } );
-
-        // Set up our request
-        XHR.open( "GET", "http://localhost:5500/app/user/:id", true );
-
-        // The data sent is what the user provided in the form
-        XHR.send( FD );
-    }
-    */
-
     // Access the form element...
     const form = document.getElementById( "forms" );
 
@@ -60,7 +35,6 @@ window.addEventListener("load", function(){
 
         addAccount();
 
-        //getScore();
     } )
     //end add user
 
