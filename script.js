@@ -2,6 +2,7 @@ let sequence = [];
 let humanSequence = [];
 let gameLevel = 0;
 // get highscore
+
 let highScore = 0;
 
 const heading = document.querySelector('.js-heading');
@@ -124,7 +125,15 @@ function resetGame(text) {
   //      New div that says new high score
   // set high score send back to form
   if (gameLevel > highScore) {
-    
+    let request = new XMLHttpRequest();
+    request.open('GET', url);
+    request.responseType = 'text';
+
+    request.onload = function() {
+      poemDisplay.textContent = request.response;
+    };
+
+    request.send();
   }
 }
 

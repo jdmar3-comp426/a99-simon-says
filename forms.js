@@ -5,13 +5,11 @@ window.addEventListener("load", function(){
         const XHR = new XMLHttpRequest()
          // Bind the FormData object and the form element
         const FD = new URLSearchParams(new FormData( form ));
-
+        name = FD.get("user");
 
         // Define what happens on successful data submission
         XHR.addEventListener( "load", function(event) {
             alert( 'Logged in! :)' );
-            //localStorage.setItem( "currentUserId", JSON.parse( XHR.response ).getElementById );
-            //alert( "currentUserId: " + localStorage.getItem( "currentUserId" ) );
         } );
 
         // Define what happens in case of error
@@ -26,8 +24,40 @@ window.addEventListener("load", function(){
         XHR.send( FD );
     }
 
+    function getScore() {
+        let request = new XMLHttpRequest();
+        console.log(name)
+        request.open('GET', "http://localhost:5500/app/user/:" + name);
+        request.responseType = 'text';
+        
+        request.onload = function() {
+            userInfo = request.response;
+        };
+    
+        request.send(name);
+
+        console.log(userInfo)
+    }
+
+    function updateScore(score) {
+        let request = new XMLHttpRequest();
+        
+        request.open('PATCH', "http://localhost:5500/app/update/user/:" + name + "/:"  + score);
+        request.responseType = 'text';
+        
+        request.onload = function() {
+            userInfo = request.response;
+        };
+    
+        request.send(name, score);
+
+        console.log(userInfo)
+    }
+
     // Access the form element...
     const form = document.getElementById( "forms" );
+    var name = "";
+    var userInfo = {}; 
 
     // Submit account to database after clicking submit
     form.addEventListener( "submit", function ( event ) {
@@ -35,7 +65,10 @@ window.addEventListener("load", function(){
 
         addAccount();
 
-    } )
+        getScore();
+
+        updateScore(11);
+    })
     //end add user
 
     //

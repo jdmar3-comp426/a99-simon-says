@@ -38,17 +38,18 @@ app.get("/app/users", (req, res) => {
 });
 
 // READ a single user (HTTP method GET) at endpoint /app/user/:id
-app.get("/app/user/:id", (req, res) => {    
-    const stmt = db.prepare("SELECT * FROM userinfo WHERE id = ?")
-    const info = stmt.get(req.params.id);
+app.get("/app/user/:name", (req, res) => {    
+    const stmt = db.prepare("SELECT score FROM userinfo WHERE user = ?")
+    const info = stmt.get(req.params.name);
+	console.log(info);
     res.status(200).json(info);
 });
 
 // UPDATE a single user (HTTP method PATCH) at endpoint /app/update/user/:id
-app.patch("/app/update/user/:id", (req, res) => {	
-	const stmt = db.prepare('UPDATE userinfo SET score = COALESCE(?, score) WHERE id = ?');
-	const info = stmt.run(req.body.score, req.params.id);
-	res.status(200).json({"message": info.changes + " record updated: ID " + req.params.id + " (200)"});
+app.patch("/app/update/user/:name/:score", (req, res) => {	
+	const stmt = db.prepare('UPDATE userinfo SET score = COALESCE(?, score) WHERE user = ?');
+	const info = stmt.run(req.params.score, req.params.name);
+	res.status(200).json({"message": info.changes + " record updated: ID " + req.params.name + " (200)"});
 });
 
 // DELETE a single user (HTTP method DELETE) at endpoint /app/delete/user/:id
@@ -57,6 +58,7 @@ app.delete("/app/delete/user/:id", (req, res) => {
 	const info = stmt.run(req.params.id);
 	res.json({"message": info.changes + " record deleted: ID " + req.params.id + " (200)"});
 });
+
 // Default response for any other request
 app.use(function(req, res){
 	res.json({"message":"Your API is working!"});
