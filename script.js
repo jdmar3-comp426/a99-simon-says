@@ -133,16 +133,10 @@ function resetGame(text) {
   if (gameLevel > highScore) {
       let request = new XMLHttpRequest();
       
-      request.open('PATCH', "http://localhost:5500/app/update/user/:" + username + "/:"  + gameLevel);
+      request.open('PATCH', "http://localhost:5500/app/update/user/:" + username + "/:" + gameLevel);
       request.responseType = 'text';
-      
-      request.onload = function() {
-          userInfo = request.response;
-      };
   
-      request.send(username, score);
-
-      console.log(userInfo)
+      request.send(username, gameLevel);
   }
 }
 
@@ -194,8 +188,7 @@ window.addEventListener("load", function(){
     };
 
     request.send(username);
-
-    console.log(userInfo)
+    
   } 
 
   // Submit account to database after clicking submit
