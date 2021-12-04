@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+/*window.addEventListener("load", function(){
     
     //start add user
     function addAccount() {
@@ -39,20 +39,7 @@ window.addEventListener("load", function(){
         console.log(userInfo)
     }
 
-    function updateScore(score) {
-        let request = new XMLHttpRequest();
-        
-        request.open('PATCH', "http://localhost:5500/app/update/user/:" + name + "/:"  + score);
-        request.responseType = 'text';
-        
-        request.onload = function() {
-            userInfo = request.response;
-        };
-    
-        request.send(name, score);
 
-        console.log(userInfo)
-    }
 
     // Access the form element...
     const form = document.getElementById( "forms" );
@@ -73,3 +60,4 @@ window.addEventListener("load", function(){
 
     //
 })
+*/

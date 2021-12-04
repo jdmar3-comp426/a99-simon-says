@@ -1,6 +1,11 @@
 let sequence = [];
 let humanSequence = [];
 let gameLevel = 0;
+
+const form = document.getElementById( "forms" );
+let username = "";
+let userInfo = {}; 
+
 // get highscore
 
 let highScore = 0;
@@ -52,6 +57,7 @@ function nextRound() {
 }
 
 function startGame() {
+  console.log(username);
   startButton.classList.add('hidden');
   info.classList.remove('hidden');
   info.textContent = 'Ready to play!';
@@ -125,15 +131,18 @@ function resetGame(text) {
   //      New div that says new high score
   // set high score send back to form
   if (gameLevel > highScore) {
-    let request = new XMLHttpRequest();
-    request.open('GET', url);
-    request.responseType = 'text';
+      let request = new XMLHttpRequest();
+      
+      request.open('PATCH', "http://localhost:5500/app/update/user/:" + username + "/:"  + gameLevel);
+      request.responseType = 'text';
+      
+      request.onload = function() {
+          userInfo = request.response;
+      };
+  
+      request.send(username, score);
 
-    request.onload = function() {
-      poemDisplay.textContent = request.response;
-    };
-
-    request.send();
+      console.log(userInfo)
   }
 }
 
@@ -148,3 +157,58 @@ function sethighScore() {
 }
 
 startButton.addEventListener('click', startGame);
+
+window.addEventListener("load", function(){
+    
+  //start add user
+  function addAccount() {
+      const XHR = new XMLHttpRequest()
+       // Bind the FormData object and the form element
+      const FD = new URLSearchParams(new FormData( form ));
+      username = FD.get("user");
+
+      // Define what happens on successful data submission
+      XHR.addEventListener( "load", function(event) {
+          alert( 'Logged in! :)' );
+      } );
+
+      // Define what happens in case of error
+      XHR.addEventListener( "error", function( event ) {
+          alert( 'Oops! Something went wrong.' );
+      } );
+
+      // Set up our request
+      XHR.open( "POST", "http://localhost:5500/app/new", true );
+
+      // The data sent is what the user provided in the form
+      XHR.send( FD );
+  }
+
+  function getScore() {
+    let request = new XMLHttpRequest();
+
+    request.open('GET', "http://localhost:5500/app/user/:" + username);
+    
+    request.onload = function() {
+        userInfo = request.response
+    };
+
+    request.send(username);
+
+    console.log(userInfo)
+  } 
+
+  // Submit account to database after clicking submit
+  form.addEventListener( "submit", function ( event ) {
+      event.preventDefault();
+
+      addAccount();
+
+      getScore();
+
+      console.log(userInfo)
+  })
+  //end add user
+
+  //
+})
