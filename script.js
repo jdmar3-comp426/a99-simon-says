@@ -8,7 +8,7 @@ let userInfo = {};
 
 // get highscore
 
-let highScore = 0;
+let highScore;
 
 const heading = document.querySelector('.js-heading');
 const tileContainer = document.querySelector('.js-container');
@@ -130,25 +130,31 @@ function resetGame(text) {
   // if (gameLevel > GET HIGH SCORE)
   //      New div that says new high score
   // set high score send back to form
+  
+
   if (gameLevel > highScore) {
+
       let request = new XMLHttpRequest();
       
       request.open('PATCH', "http://localhost:5500/app/update/user/:" + username + "/:" + gameLevel);
       request.responseType = 'text';
   
       request.send(username, gameLevel);
+
+  
   }
 }
 
 function score() {
   document.getElementById("score").innerHTML = gameLevel;
-  console.log(gameLevel);
 }
 
-function sethighScore() {
-  // new html content
-  highScore.classList.remove('hidden');
+function setUsername() {
+
+  document.getElementById("username").innerHTML = username;
 }
+
+
 
 startButton.addEventListener('click', startGame);
 
@@ -160,7 +166,7 @@ window.addEventListener("load", function(){
        // Bind the FormData object and the form element
       const FD = new URLSearchParams(new FormData( form ));
       username = FD.get("user");
-
+   
       // Define what happens on successful data submission
       XHR.addEventListener( "load", function(event) {
           alert( 'Logged in! :)' );
@@ -184,7 +190,7 @@ window.addEventListener("load", function(){
     request.open('GET', "http://localhost:5500/app/user/:" + username);
     
     request.onload = function() {
-        userInfo = request.response
+        userInfo = request.response;
     };
 
     request.send(username);
@@ -194,12 +200,14 @@ window.addEventListener("load", function(){
   // Submit account to database after clicking submit
   form.addEventListener( "submit", function ( event ) {
       event.preventDefault();
-
+  
       addAccount();
 
       getScore();
-
-      console.log(userInfo)
+    
+      console.log(username)
+      setUsername();
+  
   })
   //end add user
 
