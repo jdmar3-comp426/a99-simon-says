@@ -1,54 +1,31 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6317870&assignment_repo_type=AssignmentRepo)
-# a99 Finally
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=5567785&assignment_repo_type=AssignmentRepo)
+# a099 Simon Says Final Project
+## ****Description**** 
+The Simon game is a simple memory game in which players must repeat random sequences of lights by pressing the colored pads in the correct order. Simon will display a sequence and the user adds to the sequence throughout the game and follows the onscreen instructions. Our game uses html for the majority of the frontend framework and JavaScript for the forms as well as connecting the frontend to the database. Lastly SQL is used for our user database that will track user's login information as well as their high scores. 
+## ****Installation/Run Procedure and Dependencies****
+Required dependencies for this project are better-sqlite3, browser-sync, bulma, concurrently, cors, express, and md5. 
 
-COMP426 final project template repository. All your code and documentation goes here. Change this text to be a brief description of your final project. Put the name in the header above. You will change everything below to be the main technical documentation, as outlined below.
+- To install browser-sync, run the $ npm install browser-sync command to install and $ npx browser-sync start -sw to start the browser.
+- Bulma can be installed as a dependency using $ npm install bulma command.
+- We can install express using $ npm install express command. This will be used as a web server for our API
+- Then we install the md5 package for our passwords using the $ npm install md5 command.
+- We need a database for which we use JS implementation of a sqlite3 database. This can be done through the $ npm install better-sqlite3 command.
+- In addition, we need another package to make our client and server run concurrently through $ npm install concurrently.
 
-## First steps
+The game will be run through browser-sync and launched via a localhost. From there, users may enter their login information and begin playing the game.
+## ****Demo****
 
-Other steps that you will need to take after you have cloned this repository:
+https://youtu.be/r9cgi0uapzk
 
-1. Choose and update the LICENSE file accordingly. 
-2. Edit this README.md file and use it as the main location of your technical documentation with links out to information contained under `/docs/`.
-3. Create a `/docs/` directory for more elaborate documentation of your API, planning notes, etc.
-4. Make sure that all of your team members have access to the repository as administrators.
-5. Create a project under the **Projects** tab. Use this to manage your planning. Create a To-do list, etc. Explore the tools available and user them to manage your project.
-7. Assign team roles and include a listing of those roles in this README.md file or in another file under `/docs/`.
-8. Then put your entire development workflow in this repository.
-9. Use **Pull requests** to propose changes and incorporate them into your code from various team members. 
-10. Use **Issues** to identify and track bugs and also to communicate about various aspects of the project.
+## ****Credit and License****
 
-## Team mangement
+- Front End Lead/Plan Manager – Maya Agnihotri
+- Back End Lead – Cole Hoffman
+- Database Lead – John Poltorak
+- Design Lead/Review Manager – Ellen Hayes
+- Documentation Manager - Aryaman Agrawal
 
-Plan to meet with your team ASAP.
-Talk through identifying roles within your team.
+We also met with Rushil Shah for guidance on this project
 
-Try to figure out what each of you are good at/enjoy doing and try to work out roles that incorporate that.
+License documentation inlcuded in LICENSE file.
 
-Some basic roles you will want to consider:
-
-1. A review manager - someone to review pull requests and merge or reject them and manage the related discussions
-2. A plan manager - someone to keep an eye on the overall plan and keep the project tab/to-do list up to date
-3. A documentation manager - someone to keep the documentation in order and identify what is missing and needs to be documented
-4. Roles for team members to take charge or different parts of the project. Possible roles:
-    1. Front end lead
-    2. Back end lead
-    3. Databse lead
-    4. Design lead
-    5. Etc.
-
-You will notice that there are more roles than people in your group.
-That is because you will all be doing a hybrid job of managing a thing while working on other things.
-
-## Check in with instructional staff
-
-Once all the groups are together, we'll assign each group to an LA to check in with as you progress through the project.
-
-We will post that so that your team can schedule a time for an initial check-in with your assigned LA. It would be a good idea also to add your LA to your repository.
-
-## Assignment instructions
-
-And that is about all you need to get started.
-
-All the rest of the assignment instructions are available at: https://comp426.johndmart.in/assignments/99
-
-Good skill, and have fun with this!
